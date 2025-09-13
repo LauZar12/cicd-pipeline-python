@@ -1,3 +1,5 @@
+"""Selenium tests for the application."""
+
 import time
 from threading import Thread
 
