@@ -4,4 +4,6 @@ pytest-cov
 flake8 # To analize bugs and style errors in code.
 black # To format code automatically.
 isort # To sort imports in code.
-pylint
+pylint  # Static code analysis tool.
+selenium # For end-to-end testing.
+webdriver-manager # To manage web drivers for selenium.

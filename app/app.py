@@ -36,7 +36,7 @@ def index():
             else:
                 error = "Invalid operation."
         except ValueError as e:
-            error = f"Invalid input: {e}. Please just enter numeric values."
+            error = f"Invalid input: {e} Please check your request."
     # To render the template with results.
     return render_template(
         "index.html",
@@ -48,6 +48,6 @@ def index():
     )
 
 
-#Run the Flask server for the application.
+# Run the Flask server for the application.
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

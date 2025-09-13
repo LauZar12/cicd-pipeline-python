@@ -1,57 +1,65 @@
 # cicd-pipeline-python
 
-## Team members:
-- Laura Danniela Zárate Guerrero.
-- Esteban Vergara Giraldo.
-- Jonathan Betancur Espinosa.
-- Miguel Angel Cock Cano.
+## Team members
+- Laura Danniela Zárate Guerrero
+- Esteban Vergara Giraldo
+- Jonathan Betancur Espinosa
+- Miguel Angel Cock Cano
 
-Repository for Group Workshop Deliverable 2: CI Pipeline with Python, GitHub Actions, Docker, and OSS tools.
+Repository for Group Workshop Deliverable 2.
 
-Initial structure:
-- app/             -> Flask application (calculator)
-- tests/           -> unit and acceptance tests (Selenium)
-- .github/workflows-> GitHub Actions
-- Dockerfile
-- requirements.txt
+## Project Structure
 
-````markdown
-# Just a calculator app with tests.
+```
+app/             -> Flask application (calculator)
+tests/           -> Unit and acceptance tests
+.github/workflows-> GitHub Actions
+requirements.txt -> Python dependencies
+```
 
 ---
-Here are the steps in case you want to try it yourself. c:
 
 ## Setup
+
 ```bash
 git clone https://github.com/LauZar12/cicd-pipeline-python.git
 cd cicd-pipeline-python
 python -m venv venv
-# Activate venv.
+
+# Activate venv
 # On Windows:
 venv\Scripts\activate
 # On Linux or Mac:
 source venv/bin/activate
 
-#Then
+# Install dependencies
 pip install -r requirements.txt
-````
+```
 
 ---
 
-## To run general tests.
+## Run Tests
+
+### General Tests
 
 ```bash
 pytest -v
 pytest --cov=app --cov-report=term-missing
 ```
 
----
-
-## To test code quality.
+### Code Quality Checks
 
 ```bash
 flake8 app tests
+isort --check-only app tests
+pylint app tests
+```
+
+### Auto-correct Issues (if present)
+
+```bash
 black app tests
+isort app tests
 ```
 
 ---
@@ -62,4 +70,7 @@ black app tests
 python -m app.app
 ```
 
-Open [http://localhost:5000](http://localhost:5000)
+Open in your browser: [http://localhost:5000](http://localhost:5000)
+
+---
+

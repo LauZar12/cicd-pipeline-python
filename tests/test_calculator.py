@@ -45,7 +45,8 @@ def test_post_divide():
 
 
 def test_post_invalid_input():
-    """Test error handling when input is not numeric."""
+    """Test error handling when input is not numeric
+    (altough you cannot put other stuff, but either way)."""
     client = flask_app.test_client()
     r = client.post("/", data={"a": "abc", "b": "2", "op": "add"})
     assert r.status_code == 200

@@ -1,6 +1,7 @@
 """Unit tests for the calculator module."""
 
 import pytest
+
 from app.calculator import add, divide, multiply, subtract
 
 
