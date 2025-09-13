@@ -1,3 +1,5 @@
+"""Main application module for the app."""
+
 from flask import Flask, render_template, request
 
 from .calculator import add, divide, multiply, subtract
@@ -8,6 +10,7 @@ app = Flask(__name__, template_folder="templates")
 # Basic web routes.
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """Basically handlea GET and POST requests for the web interface."""
     result = None
     error = None
     a = ""
@@ -45,6 +48,6 @@ def index():
     )
 
 
-# Lines to basically run the app.
+#Run the Flask server for the application.
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

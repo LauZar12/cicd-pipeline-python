@@ -41,8 +41,8 @@ pip install -r requirements.txt
 ## To run general tests.
 
 ```bash
-pytest
-pytest --cov=app
+pytest -v
+pytest --cov=app --cov-report=term-missing
 ```
 
 ---
