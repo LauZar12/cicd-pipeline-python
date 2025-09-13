@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just a calculator, man.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="calculator-container">
+    <h1>Calculator.</h1>
+    
+    <form method="post">
+      <div class="form-group">
+        <label for="a">First Number</label>
+        <input type="number" id="a" name="a" value="{{ a }}" placeholder="Enter first number" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="b">Second Number</label>
+        <input type="number" id="b" name="b" value="{{ b }}" placeholder="Enter second number" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="op">Operation</label>
+        <select id="op" name="op">
+          <option value="add" {% if op == 'add' %}selected{% endif %}>Addition (+)</option>
+          <option value="subtract" {% if op == 'subtract' %}selected{% endif %}>Subtraction (−)</option>
+          <option value="multiply" {% if op == 'multiply' %}selected{% endif %}>Multiplication (×)</option>
+          <option value="divide" {% if op == 'divide' %}selected{% endif %}>Division (÷)</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn-calculate">Calculate Result</button>
+    </form>
+
+    {% if error or result is not none %}
+      {% if error %}
+        <div class="error">
+          {{ error }}
+        </div>
+      {% endif %}
+
+      {% if result is not none %}
+        <div class="result">
+          <h2>Result</h2>
+          <p>{{ result }}</p>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+  <a href="https://www.youtube.com/watch?v=hPr-Yc92qaY" target="_blank" class="youtube-btn" title="Don't click this">
+    Do not click this button. Seriously.
+  </a>
+</body>
+</html>

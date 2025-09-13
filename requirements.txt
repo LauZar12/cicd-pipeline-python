@@ -1,0 +1,7 @@
+flask
+pytest
+pytest-cov
+flake8 # To analize bugs and style errors in code.
+black # To format code automatically.
+isort # To sort imports in code.
+pylint

@@ -1,29 +1,23 @@
-__pycache__/
-*.py[cod]
-*$py.class
-
+# virtual envs
 venv/
-.venv/
-.env
+env/
 
-build/
-dist/
-*.egg-info/
+# python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
 
+# pytest
 .pytest_cache/
-coverage.xml
+pytestdebug.log
+
+# coverage
 .coverage
 htmlcov/
+coverage.xml
+report.html
+acceptance_coverage.xml
 
-*.tar
-docker-compose.override.yml
-
+# IDE
 .vscode/
-.idea/
-
-.DS_Store
-Thumbs.db
-
-*.log
-
-secrets.json
