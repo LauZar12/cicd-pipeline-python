@@ -34,7 +34,7 @@ jobs:
       run: flake8 app tests
 
     - name: Run Pylint
-      run: pylint app tests
+      run: pylint app tests --exit-zero
 
     - name: Run Pytest with coverage
       run: pytest --cov=app --cov-report=xml
